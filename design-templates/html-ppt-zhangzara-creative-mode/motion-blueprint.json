@@ -142,8 +142,8 @@
   "layouts": [
     {
       "index": 1,
-      "layoutId": "hero",
-      "name": "01 · Ultra-Bold Hero",
+      "layoutId": "title",
+      "name": "01 Title / Poster",
       "archetype": "cover",
       "remotionComposition": "PptxParallaxIntro",
       "cameraMotion": "1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5)",
@@ -158,147 +158,147 @@
     },
     {
       "index": 2,
-      "layoutId": "statement",
-      "name": "02 · Core Manifesto",
-      "archetype": "quote",
-      "remotionComposition": "ParallaxDepthSandwich",
-      "cameraMotion": "4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px)",
+      "layoutId": "intro",
+      "name": "02 Intro / Two Col",
+      "archetype": "section-intro",
+      "remotionComposition": "PptxParallaxIntro",
+      "cameraMotion": "1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5)",
       "elementChoreography": {
-        "kicker": "Frames 0..12: eyebrow tag reveal on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
-        "headline": "Frames 4..18: 96pt headline spring entrance on (.title, h1, h2, .title)",
-        "cards": "Frames 10..36: multi-column card stagger (4 frames per card) with active-card border highlight on (.card, .synth-card, [class*=\"card\"])",
-        "subtitle": "Continuous: acoustic word-by-word karaoke highlight striking on (.lede, .subtitle, p)"
+        "kicker": "Frames 0..12: spring slide-up + opacity 0->1 on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
+        "headline": "Frames 6..22: 110-120pt hero spring entrance (damping: 18, stiffness: 120) + double-pass dark drop shadow on (.title, h1, h2, .title)",
+        "subtitle": "Frames 14..28: smooth fade-up + acoustic karaoke word-highlight tracking on (.lede, .subtitle, p)",
+        "badges": "Frames 20..36: 4-frame staggered pop-in with triple-pass physical drop-shadow on (.pill, .badge, .tag, .synth-badge)"
       },
-      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 14, opacity: 0, duration: 0.3 }, 0).from(\".title, h1, h2, .title\", { y: 28, opacity: 0, duration: 0.45, ease: \"power3.out\" }, 0.1).from(\".card, .synth-card, [class*=\"card\"]\", { y: 36, opacity: 0, stagger: 0.1, duration: 0.45, ease: \"power2.out\" }, 0.22);",
-      "transitionOut": "Momentum exit (+380px) with anchored background plate"
+      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 18, opacity: 0, duration: 0.35, ease: \"power3.out\" }, 0).from(\".title, h1, h2, .title\", { y: 36, scale: 0.94, opacity: 0, duration: 0.55, ease: \"back.out(1.4)\" }, 0.12).from(\".lede, .subtitle, p\", { y: 20, opacity: 0, duration: 0.45 }, 0.28).from(\".pill, .badge, .tag, .synth-badge\", { scale: 0.85, opacity: 0, stagger: 0.08, duration: 0.35 }, 0.42);",
+      "transitionOut": "Momentum slide exit (+380px) with 12-frame crossfade"
     },
     {
       "index": 3,
-      "layoutId": "exec-summary",
-      "name": "03 · Executive Summary",
-      "archetype": "two-column",
-      "remotionComposition": "ParallaxDepthSandwich",
-      "cameraMotion": "4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px)",
+      "layoutId": "stats",
+      "name": "03 Stat Grid",
+      "archetype": "stat-grid",
+      "remotionComposition": "PptxParallaxIntro",
+      "cameraMotion": "1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5)",
       "elementChoreography": {
-        "kicker": "Frames 0..12: eyebrow tag reveal on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
-        "headline": "Frames 4..18: 96pt headline spring entrance on (.title, h1, h2, .title)",
-        "cards": "Frames 10..36: multi-column card stagger (4 frames per card) with active-card border highlight on (.card, .synth-card, [class*=\"card\"])",
-        "subtitle": "Continuous: acoustic word-by-word karaoke highlight striking on (.lede, .subtitle, p)"
+        "kicker": "Frames 0..12: spring slide-up + opacity 0->1 on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
+        "headline": "Frames 6..22: 110-120pt hero spring entrance (damping: 18, stiffness: 120) + double-pass dark drop shadow on (.title, h1, h2, .title)",
+        "subtitle": "Frames 14..28: smooth fade-up + acoustic karaoke word-highlight tracking on (.lede, .subtitle, p)",
+        "badges": "Frames 20..36: 4-frame staggered pop-in with triple-pass physical drop-shadow on (.pill, .badge, .tag, .synth-badge)"
       },
-      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 14, opacity: 0, duration: 0.3 }, 0).from(\".title, h1, h2, .title\", { y: 28, opacity: 0, duration: 0.45, ease: \"power3.out\" }, 0.1).from(\".card, .synth-card, [class*=\"card\"]\", { y: 36, opacity: 0, stagger: 0.1, duration: 0.45, ease: \"power2.out\" }, 0.22);",
-      "transitionOut": "Momentum exit (+380px) with anchored background plate"
+      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 18, opacity: 0, duration: 0.35, ease: \"power3.out\" }, 0).from(\".title, h1, h2, .title\", { y: 36, scale: 0.94, opacity: 0, duration: 0.55, ease: \"back.out(1.4)\" }, 0.12).from(\".lede, .subtitle, p\", { y: 20, opacity: 0, duration: 0.45 }, 0.28).from(\".pill, .badge, .tag, .synth-badge\", { scale: 0.85, opacity: 0, stagger: 0.08, duration: 0.35 }, 0.42);",
+      "transitionOut": "Momentum slide exit (+380px) with 12-frame crossfade"
     },
     {
       "index": 4,
-      "layoutId": "financial-grid",
-      "name": "04 · Growth Metrics Grid",
-      "archetype": "stats",
-      "remotionComposition": "EysiInspiredSequence",
-      "cameraMotion": "Sub-pixel bezier drift (+42px horizontal) followed by 1.08x focal push-in onto primary metric/chart ROI at narration peak",
+      "layoutId": "diagram",
+      "name": "04 Diagram",
+      "archetype": "diagram",
+      "remotionComposition": "PptxParallaxIntro",
+      "cameraMotion": "1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5)",
       "elementChoreography": {
-        "headline": "Frames 0..16: 96pt header entrance on (.title, h1, h2, .title)",
-        "stats": "Frames 10..40: numeric count-up interpolation (interpolate(frame, [10, 40], [0, targetValue])) at 150pt on (.stat-value, [class*=\"stat\"], [class*=\"big\"])",
-        "cards": "Frames 8..32: 4-frame staggered 2.5D card elevation (80px ambient dark glass shadow) on (.card, .synth-card, [class*=\"card\"])",
-        "codeAndData": "Frames 14..45: progressive bar/line draw (strokeDashoffset / scaleY 0->1) on (.bar, .grid, table, pre, code, table, svg, canvas)"
+        "kicker": "Frames 0..12: spring slide-up + opacity 0->1 on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
+        "headline": "Frames 6..22: 110-120pt hero spring entrance (damping: 18, stiffness: 120) + double-pass dark drop shadow on (.title, h1, h2, .title)",
+        "subtitle": "Frames 14..28: smooth fade-up + acoustic karaoke word-highlight tracking on (.lede, .subtitle, p)",
+        "badges": "Frames 20..36: 4-frame staggered pop-in with triple-pass physical drop-shadow on (.pill, .badge, .tag, .synth-badge)"
       },
-      "hyperframesGsap": "tl.from(\".title, h1, h2, .title\", { y: 24, opacity: 0, duration: 0.4 }, 0).from(\".card, .synth-card, [class*=\"card\"]\", { y: 32, opacity: 0, stagger: 0.1, duration: 0.45, ease: \"power2.out\" }, 0.15).from(\".stat-value, [class*=\"stat\"], [class*=\"big\"]\", { scale: 0.8, opacity: 0, stagger: 0.12, duration: 0.5, ease: \"back.out(1.6)\" }, 0.25).from(\".bar, .grid, table, pre, code, table, svg, canvas\", { scaleY: 0, transformOrigin: \"bottom center\", opacity: 0, duration: 0.55, ease: \"power3.out\" }, 0.3);",
-      "transitionOut": "Crossfade + subtle Z-depth recede"
+      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 18, opacity: 0, duration: 0.35, ease: \"power3.out\" }, 0).from(\".title, h1, h2, .title\", { y: 36, scale: 0.94, opacity: 0, duration: 0.55, ease: \"back.out(1.4)\" }, 0.12).from(\".lede, .subtitle, p\", { y: 20, opacity: 0, duration: 0.45 }, 0.28).from(\".pill, .badge, .tag, .synth-badge\", { scale: 0.85, opacity: 0, stagger: 0.08, duration: 0.35 }, 0.42);",
+      "transitionOut": "Momentum slide exit (+380px) with 12-frame crossfade"
     },
     {
       "index": 5,
-      "layoutId": "big-stat",
-      "name": "05 · Mega Stat Callout",
-      "archetype": "stats",
-      "remotionComposition": "EysiInspiredSequence",
-      "cameraMotion": "Sub-pixel bezier drift (+42px horizontal) followed by 1.08x focal push-in onto primary metric/chart ROI at narration peak",
+      "layoutId": "chart",
+      "name": "05 Bar Chart",
+      "archetype": "chart",
+      "remotionComposition": "PptxParallaxIntro",
+      "cameraMotion": "1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5)",
       "elementChoreography": {
-        "headline": "Frames 0..16: 96pt header entrance on (.title, h1, h2, .title)",
-        "stats": "Frames 10..40: numeric count-up interpolation (interpolate(frame, [10, 40], [0, targetValue])) at 150pt on (.stat-value, [class*=\"stat\"], [class*=\"big\"])",
-        "cards": "Frames 8..32: 4-frame staggered 2.5D card elevation (80px ambient dark glass shadow) on (.card, .synth-card, [class*=\"card\"])",
-        "codeAndData": "Frames 14..45: progressive bar/line draw (strokeDashoffset / scaleY 0->1) on (.bar, .grid, table, pre, code, table, svg, canvas)"
+        "kicker": "Frames 0..12: spring slide-up + opacity 0->1 on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
+        "headline": "Frames 6..22: 110-120pt hero spring entrance (damping: 18, stiffness: 120) + double-pass dark drop shadow on (.title, h1, h2, .title)",
+        "subtitle": "Frames 14..28: smooth fade-up + acoustic karaoke word-highlight tracking on (.lede, .subtitle, p)",
+        "badges": "Frames 20..36: 4-frame staggered pop-in with triple-pass physical drop-shadow on (.pill, .badge, .tag, .synth-badge)"
       },
-      "hyperframesGsap": "tl.from(\".title, h1, h2, .title\", { y: 24, opacity: 0, duration: 0.4 }, 0).from(\".card, .synth-card, [class*=\"card\"]\", { y: 32, opacity: 0, stagger: 0.1, duration: 0.45, ease: \"power2.out\" }, 0.15).from(\".stat-value, [class*=\"stat\"], [class*=\"big\"]\", { scale: 0.8, opacity: 0, stagger: 0.12, duration: 0.5, ease: \"back.out(1.6)\" }, 0.25).from(\".bar, .grid, table, pre, code, table, svg, canvas\", { scaleY: 0, transformOrigin: \"bottom center\", opacity: 0, duration: 0.55, ease: \"power3.out\" }, 0.3);",
-      "transitionOut": "Crossfade + subtle Z-depth recede"
+      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 18, opacity: 0, duration: 0.35, ease: \"power3.out\" }, 0).from(\".title, h1, h2, .title\", { y: 36, scale: 0.94, opacity: 0, duration: 0.55, ease: \"back.out(1.4)\" }, 0.12).from(\".lede, .subtitle, p\", { y: 20, opacity: 0, duration: 0.45 }, 0.28).from(\".pill, .badge, .tag, .synth-badge\", { scale: 0.85, opacity: 0, stagger: 0.08, duration: 0.35 }, 0.42);",
+      "transitionOut": "Momentum slide exit (+380px) with 12-frame crossfade"
     },
     {
       "index": 6,
-      "layoutId": "services",
-      "name": "06 · Service Capabilities",
-      "archetype": "three-column",
-      "remotionComposition": "ParallaxDepthSandwich",
-      "cameraMotion": "4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px)",
+      "layoutId": "process",
+      "name": "06 Process",
+      "archetype": "process",
+      "remotionComposition": "PptxParallaxIntro",
+      "cameraMotion": "1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5)",
       "elementChoreography": {
-        "kicker": "Frames 0..12: eyebrow tag reveal on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
-        "headline": "Frames 4..18: 96pt headline spring entrance on (.title, h1, h2, .title)",
-        "cards": "Frames 10..36: multi-column card stagger (4 frames per card) with active-card border highlight on (.card, .synth-card, [class*=\"card\"])",
-        "subtitle": "Continuous: acoustic word-by-word karaoke highlight striking on (.lede, .subtitle, p)"
+        "kicker": "Frames 0..12: spring slide-up + opacity 0->1 on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
+        "headline": "Frames 6..22: 110-120pt hero spring entrance (damping: 18, stiffness: 120) + double-pass dark drop shadow on (.title, h1, h2, .title)",
+        "subtitle": "Frames 14..28: smooth fade-up + acoustic karaoke word-highlight tracking on (.lede, .subtitle, p)",
+        "badges": "Frames 20..36: 4-frame staggered pop-in with triple-pass physical drop-shadow on (.pill, .badge, .tag, .synth-badge)"
       },
-      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 14, opacity: 0, duration: 0.3 }, 0).from(\".title, h1, h2, .title\", { y: 28, opacity: 0, duration: 0.45, ease: \"power3.out\" }, 0.1).from(\".card, .synth-card, [class*=\"card\"]\", { y: 36, opacity: 0, stagger: 0.1, duration: 0.45, ease: \"power2.out\" }, 0.22);",
-      "transitionOut": "Momentum exit (+380px) with anchored background plate"
+      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 18, opacity: 0, duration: 0.35, ease: \"power3.out\" }, 0).from(\".title, h1, h2, .title\", { y: 36, scale: 0.94, opacity: 0, duration: 0.55, ease: \"back.out(1.4)\" }, 0.12).from(\".lede, .subtitle, p\", { y: 20, opacity: 0, duration: 0.45 }, 0.28).from(\".pill, .badge, .tag, .synth-badge\", { scale: 0.85, opacity: 0, stagger: 0.08, duration: 0.35 }, 0.42);",
+      "transitionOut": "Momentum slide exit (+380px) with 12-frame crossfade"
     },
     {
       "index": 7,
-      "layoutId": "roadmap",
-      "name": "07 · Phase Roadmap",
-      "archetype": "process",
-      "remotionComposition": "ParallaxDepthSandwich",
-      "cameraMotion": "4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px)",
+      "layoutId": "compare",
+      "name": "07 Compare Table",
+      "archetype": "compare",
+      "remotionComposition": "PptxParallaxIntro",
+      "cameraMotion": "1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5)",
       "elementChoreography": {
-        "kicker": "Frames 0..12: eyebrow tag reveal on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
-        "headline": "Frames 4..18: 96pt headline spring entrance on (.title, h1, h2, .title)",
-        "cards": "Frames 10..36: multi-column card stagger (4 frames per card) with active-card border highlight on (.card, .synth-card, [class*=\"card\"])",
-        "subtitle": "Continuous: acoustic word-by-word karaoke highlight striking on (.lede, .subtitle, p)"
+        "kicker": "Frames 0..12: spring slide-up + opacity 0->1 on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
+        "headline": "Frames 6..22: 110-120pt hero spring entrance (damping: 18, stiffness: 120) + double-pass dark drop shadow on (.title, h1, h2, .title)",
+        "subtitle": "Frames 14..28: smooth fade-up + acoustic karaoke word-highlight tracking on (.lede, .subtitle, p)",
+        "badges": "Frames 20..36: 4-frame staggered pop-in with triple-pass physical drop-shadow on (.pill, .badge, .tag, .synth-badge)"
       },
-      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 14, opacity: 0, duration: 0.3 }, 0).from(\".title, h1, h2, .title\", { y: 28, opacity: 0, duration: 0.45, ease: \"power3.out\" }, 0.1).from(\".card, .synth-card, [class*=\"card\"]\", { y: 36, opacity: 0, stagger: 0.1, duration: 0.45, ease: \"power2.out\" }, 0.22);",
-      "transitionOut": "Momentum exit (+380px) with anchored background plate"
+      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 18, opacity: 0, duration: 0.35, ease: \"power3.out\" }, 0).from(\".title, h1, h2, .title\", { y: 36, scale: 0.94, opacity: 0, duration: 0.55, ease: \"back.out(1.4)\" }, 0.12).from(\".lede, .subtitle, p\", { y: 20, opacity: 0, duration: 0.45 }, 0.28).from(\".pill, .badge, .tag, .synth-badge\", { scale: 0.85, opacity: 0, stagger: 0.08, duration: 0.35 }, 0.42);",
+      "transitionOut": "Momentum slide exit (+380px) with 12-frame crossfade"
     },
     {
       "index": 8,
-      "layoutId": "pillars",
-      "name": "08 · Strategic Pillars",
-      "archetype": "three-column",
-      "remotionComposition": "ParallaxDepthSandwich",
-      "cameraMotion": "4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px)",
+      "layoutId": "closing",
+      "name": "08 Closing",
+      "archetype": "closing",
+      "remotionComposition": "PptxParallaxIntro",
+      "cameraMotion": "1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5)",
       "elementChoreography": {
-        "kicker": "Frames 0..12: eyebrow tag reveal on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
-        "headline": "Frames 4..18: 96pt headline spring entrance on (.title, h1, h2, .title)",
-        "cards": "Frames 10..36: multi-column card stagger (4 frames per card) with active-card border highlight on (.card, .synth-card, [class*=\"card\"])",
-        "subtitle": "Continuous: acoustic word-by-word karaoke highlight striking on (.lede, .subtitle, p)"
+        "kicker": "Frames 0..12: spring slide-up + opacity 0->1 on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
+        "headline": "Frames 6..22: 110-120pt hero spring entrance (damping: 18, stiffness: 120) + double-pass dark drop shadow on (.title, h1, h2, .title)",
+        "subtitle": "Frames 14..28: smooth fade-up + acoustic karaoke word-highlight tracking on (.lede, .subtitle, p)",
+        "badges": "Frames 20..36: 4-frame staggered pop-in with triple-pass physical drop-shadow on (.pill, .badge, .tag, .synth-badge)"
       },
-      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 14, opacity: 0, duration: 0.3 }, 0).from(\".title, h1, h2, .title\", { y: 28, opacity: 0, duration: 0.45, ease: \"power3.out\" }, 0.1).from(\".card, .synth-card, [class*=\"card\"]\", { y: 36, opacity: 0, stagger: 0.1, duration: 0.45, ease: \"power2.out\" }, 0.22);",
-      "transitionOut": "Momentum exit (+380px) with anchored background plate"
+      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 18, opacity: 0, duration: 0.35, ease: \"power3.out\" }, 0).from(\".title, h1, h2, .title\", { y: 36, scale: 0.94, opacity: 0, duration: 0.55, ease: \"back.out(1.4)\" }, 0.12).from(\".lede, .subtitle, p\", { y: 20, opacity: 0, duration: 0.45 }, 0.28).from(\".pill, .badge, .tag, .synth-badge\", { scale: 0.85, opacity: 0, stagger: 0.08, duration: 0.35 }, 0.42);",
+      "transitionOut": "Momentum slide exit (+380px) with 12-frame crossfade"
     },
     {
       "index": 9,
-      "layoutId": "global",
-      "name": "09 · Global Footprint",
-      "archetype": "image-text",
-      "remotionComposition": "ParallaxDepthSandwich",
-      "cameraMotion": "4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px)",
+      "layoutId": "cards3",
+      "name": "09 Cards x3",
+      "archetype": "stat-grid",
+      "remotionComposition": "PptxParallaxIntro",
+      "cameraMotion": "1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5)",
       "elementChoreography": {
-        "kicker": "Frames 0..12: eyebrow tag reveal on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
-        "headline": "Frames 4..18: 96pt headline spring entrance on (.title, h1, h2, .title)",
-        "cards": "Frames 10..36: multi-column card stagger (4 frames per card) with active-card border highlight on (.card, .synth-card, [class*=\"card\"])",
-        "subtitle": "Continuous: acoustic word-by-word karaoke highlight striking on (.lede, .subtitle, p)"
+        "kicker": "Frames 0..12: spring slide-up + opacity 0->1 on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
+        "headline": "Frames 6..22: 110-120pt hero spring entrance (damping: 18, stiffness: 120) + double-pass dark drop shadow on (.title, h1, h2, .title)",
+        "subtitle": "Frames 14..28: smooth fade-up + acoustic karaoke word-highlight tracking on (.lede, .subtitle, p)",
+        "badges": "Frames 20..36: 4-frame staggered pop-in with triple-pass physical drop-shadow on (.pill, .badge, .tag, .synth-badge)"
       },
-      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 14, opacity: 0, duration: 0.3 }, 0).from(\".title, h1, h2, .title\", { y: 28, opacity: 0, duration: 0.45, ease: \"power3.out\" }, 0.1).from(\".card, .synth-card, [class*=\"card\"]\", { y: 36, opacity: 0, stagger: 0.1, duration: 0.45, ease: \"power2.out\" }, 0.22);",
-      "transitionOut": "Momentum exit (+380px) with anchored background plate"
+      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 18, opacity: 0, duration: 0.35, ease: \"power3.out\" }, 0).from(\".title, h1, h2, .title\", { y: 36, scale: 0.94, opacity: 0, duration: 0.55, ease: \"back.out(1.4)\" }, 0.12).from(\".lede, .subtitle, p\", { y: 20, opacity: 0, duration: 0.45 }, 0.28).from(\".pill, .badge, .tag, .synth-badge\", { scale: 0.85, opacity: 0, stagger: 0.08, duration: 0.35 }, 0.42);",
+      "transitionOut": "Momentum slide exit (+380px) with 12-frame crossfade"
     },
     {
       "index": 10,
-      "layoutId": "closing",
-      "name": "10 · Colophon & Closing",
+      "layoutId": "colophon",
+      "name": "10 Colophon",
       "archetype": "closing",
-      "remotionComposition": "ParallaxDepthSandwich",
-      "cameraMotion": "4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px)",
+      "remotionComposition": "PptxParallaxIntro",
+      "cameraMotion": "1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5)",
       "elementChoreography": {
-        "kicker": "Frames 0..12: eyebrow tag reveal on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
-        "headline": "Frames 4..18: 96pt headline spring entrance on (.title, h1, h2, .title)",
-        "cards": "Frames 10..36: multi-column card stagger (4 frames per card) with active-card border highlight on (.card, .synth-card, [class*=\"card\"])",
-        "subtitle": "Continuous: acoustic word-by-word karaoke highlight striking on (.lede, .subtitle, p)"
+        "kicker": "Frames 0..12: spring slide-up + opacity 0->1 on (.kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker)",
+        "headline": "Frames 6..22: 110-120pt hero spring entrance (damping: 18, stiffness: 120) + double-pass dark drop shadow on (.title, h1, h2, .title)",
+        "subtitle": "Frames 14..28: smooth fade-up + acoustic karaoke word-highlight tracking on (.lede, .subtitle, p)",
+        "badges": "Frames 20..36: 4-frame staggered pop-in with triple-pass physical drop-shadow on (.pill, .badge, .tag, .synth-badge)"
       },
-      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 14, opacity: 0, duration: 0.3 }, 0).from(\".title, h1, h2, .title\", { y: 28, opacity: 0, duration: 0.45, ease: \"power3.out\" }, 0.1).from(\".card, .synth-card, [class*=\"card\"]\", { y: 36, opacity: 0, stagger: 0.1, duration: 0.45, ease: \"power2.out\" }, 0.22);",
-      "transitionOut": "Momentum exit (+380px) with anchored background plate"
+      "hyperframesGsap": "tl.from(\".kicker, .tag, .badge, .kicker, .eyebrow, .synth-kicker\", { y: 18, opacity: 0, duration: 0.35, ease: \"power3.out\" }, 0).from(\".title, h1, h2, .title\", { y: 36, scale: 0.94, opacity: 0, duration: 0.55, ease: \"back.out(1.4)\" }, 0.12).from(\".lede, .subtitle, p\", { y: 20, opacity: 0, duration: 0.45 }, 0.28).from(\".pill, .badge, .tag, .synth-badge\", { scale: 0.85, opacity: 0, stagger: 0.08, duration: 0.35 }, 0.42);",
+      "transitionOut": "Momentum slide exit (+380px) with 12-frame crossfade"
     }
   ]
 }

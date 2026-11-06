@@ -230,6 +230,12 @@
     position:absolute; left:160px; right:600px; bottom:90px;
     font-family:"JetBrains Mono"; font-size:24px; letter-spacing:.06em; color:var(--ink-2);
   }
+  .s5 .bstat{
+    position:absolute; right:96px; top:150px;
+    background:var(--yellow); border:4px solid var(--ink);
+    padding:18px 34px; font-size:96px; line-height:.95;
+    transform:rotate(-3deg);
+  }
 
   /* --- SLIDE 6: PROCESS / FLOW --- */
   .s6 .h{
@@ -326,6 +332,22 @@
   .s8 .stamp .num{ font-family:"Archivo Black"; font-size:64px; line-height:.9; margin-bottom:10px; }
   .s8 .stamp .lbl{ font-family:"JetBrains Mono"; font-size:24px; letter-spacing:.12em; text-transform:uppercase; margin-top:6px;}
 
+
+  /* --- SLIDE 9: CARDS3 --- */
+  .s9 .h{position:absolute;left:96px;top:150px;right:96px;font-size:92px;color:var(--ink);}
+  .s9 .cards{position:absolute;left:96px;right:96px;top:430px;bottom:150px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .s9 .kcard{border:3px solid var(--ink);padding:32px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+  .s9 .kcard .n{font-family:"Archivo Black";font-size:110px;line-height:.95;}
+  .s9 .kcard .t{font-family:"Archivo Black";font-size:40px;margin-top:18px;line-height:1.05;text-transform:uppercase;}
+  .s9 .kcard .d{font-size:26px;line-height:1.35;margin-top:14px;color:var(--ink-2);}
+  .s9 .k1{background:var(--pink);} .s9 .k2{background:var(--yellow);} .s9 .k3{background:var(--green-dark);color:var(--cream);} .s9 .k3 .d{color:var(--cream);}
+  /* --- SLIDE 10: COLOPHON --- */
+  .s10 .topbar .tb-pink{color:var(--pink-dark);}
+  .s10 .h{position:absolute;left:96px;top:200px;right:96px;font-size:120px;color:var(--ink);}
+  .s10 .rule{position:absolute;left:96px;top:500px;width:200px;height:6px;background:var(--pink);border:2px solid var(--ink);}
+  .s10 .sub{position:absolute;left:96px;top:540px;right:480px;font-size:32px;line-height:1.35;color:var(--ink-2);}
+  .s10 .chips{position:absolute;left:96px;right:96px;top:730px;display:flex;gap:20px;flex-wrap:wrap;}
+  .s10 .chip{border:3px solid var(--ink);border-radius:999px;padding:14px 28px;font-family:"JetBrains Mono",monospace;font-size:26px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;background:var(--cream);}
 </style>
 </head>
 <body>
@@ -333,17 +355,17 @@
 <deck-stage>
 
   <!-- ============ 1: TITLE / POSTER ============ -->
-  <section class="s1" data-screen-label="01 Title">
+  <section class="s1" data-layout-id="title" data-screen-label="01 Title">
     <div class="tagline">
-      <span></span>FIELD&nbsp;AUDIT &nbsp;/&nbsp; IDENTITY&nbsp;SYSTEM &nbsp;/&nbsp; V2
+      <span></span><span data-od-field="kicker">FIELD&nbsp;AUDIT &nbsp;/&nbsp; IDENTITY&nbsp;SYSTEM &nbsp;/&nbsp; V2</span>
     </div>
 
     <div class="title display">
-      <span class="row">CAIRN</span>
-      <span class="row" style="color:var(--orange)">SUPPLY CO.</span>
+      <span class="row" data-od-field="h1a">CAIRN</span>
+      <span class="row" data-od-field="h1b" style="color:var(--orange)">SUPPLY CO.</span>
     </div>
 
-    <div class="footnote">
+    <div class="footnote" data-od-field="body">
       A ground-up visual-identity system for an outdoor label — logo, color, type, and the rules that keep every page on-brand.
     </div>
 
@@ -358,22 +380,22 @@
     </div>
 
     <div class="slide-meta">
-      <div>CAIRN SUPPLY CO. VISUAL IDENTITY</div>
-      <div>01<span class="dot"></span>08</div>
+      <div data-od-field="meta">CAIRN SUPPLY CO. VISUAL IDENTITY</div>
+      <div data-od-field="page">01<span class="dot"></span>08</div>
     </div>
   </section>
 
   <!-- ============ 2: SECTION INTRO / TWO COL ============ -->
-  <section class="s2" data-screen-label="02 Intro">
+  <section class="s2" data-layout-id="intro" data-screen-label="02 Intro">
     <div class="topbar">
-      <div>SECTION 01</div>
-      <div class="pill">BRAND&nbsp;AUDIT</div>
+      <div data-od-field="section">SECTION 01</div>
+      <div class="pill" data-od-field="pill">BRAND&nbsp;AUDIT</div>
     </div>
 
-    <div class="kicker mono">The Diagnosis</div>
-    <h1 class="h display">BRAND<br/>IN<br/>PIECES.</h1>
+    <div class="kicker mono" data-od-field="label">The Diagnosis</div>
+    <h1 class="h display" data-od-field="headline">BRAND<br/>IN<br/>PIECES.</h1>
 
-    <div class="body-col body">
+    <div class="body-col body" data-od-field="body">
       <p>Across 42 live pages, the Cairn wordmark appeared in 11 different croppings, three of them stretched off their original aspect ratio.</p>
       <p>Product photography sat on four different creams, and the trail-marker orange shifted hue between the app icon, hangtags, and paid ads.</p>
       <p>This system replaces guesswork with four locked rules: logo, color, type, and grid, enforced page by page.</p>
@@ -383,72 +405,72 @@
     <div class="ix" aria-hidden="true"><div class="circ"></div></div>
 
     <div class="slide-meta">
-      <div>BRAND&nbsp;AUDIT</div>
-      <div>02<span class="dot"></span>08</div>
+      <div data-od-field="meta">BRAND&nbsp;AUDIT</div>
+      <div data-od-field="page">02<span class="dot"></span>08</div>
     </div>
   </section>
 
   <!-- ============ 3: STAT GRID 2x2 ============ -->
-  <section class="s3" data-screen-label="03 Stats">
+  <section class="s3" data-layout-id="stats" data-screen-label="03 Stats">
     <div class="topbar">
-      <div>BY&nbsp;THE&nbsp;NUMBERS</div>
-      <div class="pill">AUDIT&nbsp;FINDINGS</div>
+      <div data-od-field="kicker">BY&nbsp;THE&nbsp;NUMBERS</div>
+      <div class="pill" data-od-field="pill">AUDIT&nbsp;FINDINGS</div>
     </div>
 
-    <h1 class="h display">FOUR NUMBERS,
+    <h1 class="h display" data-od-field="headline">FOUR NUMBERS,
 ONE MESSY BRAND.</h1>
 
     <div class="grid">
-      <div class="cell c1">
+      <div class="cell c1" data-od-item>
         <div class="corner mono">/01</div>
-        <div class="num-wrap"><div class="num">11</div></div>
+        <div class="num-wrap"><div class="num" data-od-field="cards.0.num">11</div></div>
         <div>
-          <div class="lbl">Logo Croppings</div>
-          <div class="desc">Distinct wordmark lockups found in market — only one is approved.</div>
+          <div class="lbl" data-od-field="cards.0.label">Logo Croppings</div>
+          <div class="desc" data-od-field="cards.0.desc">Distinct wordmark lockups found in market — only one is approved.</div>
         </div>
       </div>
-      <div class="cell c2">
+      <div class="cell c2" data-od-item>
         <div class="corner mono">/02</div>
-        <div class="num-wrap"><div class="num">6</div></div>
+        <div class="num-wrap"><div class="num" data-od-field="cards.1.num">6</div></div>
         <div>
-          <div class="lbl">Shades Of Orange</div>
-          <div class="desc">Hex values all calling themselves "Cairn Blaze" across hangtags and ads.</div>
+          <div class="lbl" data-od-field="cards.1.label">Shades Of Orange</div>
+          <div class="desc" data-od-field="cards.1.desc">Hex values all calling themselves "Cairn Blaze" across hangtags and ads.</div>
         </div>
       </div>
-      <div class="cell c3">
+      <div class="cell c3" data-od-item>
         <div class="corner mono">/03</div>
-        <div class="num-wrap"><div class="num">4</div></div>
+        <div class="num-wrap"><div class="num" data-od-field="cards.2.num">4</div></div>
         <div>
-          <div class="lbl">Type Pairings</div>
-          <div class="desc">Competing display faces used for headlines with no shared scale.</div>
+          <div class="lbl" data-od-field="cards.2.label">Type Pairings</div>
+          <div class="desc" data-od-field="cards.2.desc">Competing display faces used for headlines with no shared scale.</div>
         </div>
       </div>
-      <div class="cell c4">
+      <div class="cell c4" data-od-item>
         <div class="corner mono">/04</div>
-        <div class="num-wrap"><div class="num">0</div></div>
+        <div class="num-wrap"><div class="num" data-od-field="cards.3.num">0</div></div>
         <div>
-          <div class="lbl">Page Templates</div>
-          <div class="desc">No documented grid — every landing page was built from scratch.</div>
+          <div class="lbl" data-od-field="cards.3.label">Page Templates</div>
+          <div class="desc" data-od-field="cards.3.desc">No documented grid — every landing page was built from scratch.</div>
         </div>
       </div>
     </div>
 
     <div class="slide-meta">
-      <div>METRICS&nbsp;OVERVIEW</div>
-      <div>03<span class="dot"></span>08</div>
+      <div data-od-field="meta">METRICS&nbsp;OVERVIEW</div>
+      <div data-od-field="page">03<span class="dot"></span>08</div>
     </div>
   </section>
 
   <!-- ============ 4: ISOMETRIC DIAGRAM ============ -->
-  <section class="s4" data-screen-label="04 Diagram">
+  <section class="s4" data-layout-id="diagram" data-screen-label="04 Diagram">
     <div class="topbar">
-      <div>RESCUE&nbsp;PRINCIPLES</div>
-      <div class="pill">SCHEMATIC&nbsp;/&nbsp;A</div>
+      <div data-od-field="kicker">RESCUE&nbsp;PRINCIPLES</div>
+      <div class="pill" data-od-field="pill">SCHEMATIC&nbsp;/&nbsp;A</div>
     </div>
 
-    <h1 class="h display">FOUR RULES,<br/>STACKED<br/>TIGHT.</h1>
+    <h1 class="h display" data-od-field="headline">FOUR RULES,<br/>STACKED<br/>TIGHT.</h1>
 
-    <p class="sub body">
+    <p class="sub body" data-od-field="body">
       The rescue isn't a new logo — it's four rules that lock the existing marks into one system: a single lockup, a three-color trail palette, a two-face type scale, and an 8px grid every template inherits.
     </p>
 
@@ -461,32 +483,34 @@ ONE MESSY BRAND.</h1>
 
     <div class="iso" aria-hidden="true">
       <div class="stack">
-        <div class="blk b1"><span class="tag">Logo / 01</span></div>
-        <div class="blk b2"><span class="tag">Color / 02</span></div>
-        <div class="blk b3"><span class="tag">Type / 03</span></div>
-        <div class="blk b4"><span class="tag">Grid / 04</span></div>
+        <div class="blk b1" data-od-item><span class="tag" data-od-field="blocks.0">Logo / 01</span></div>
+        <div class="blk b2" data-od-item><span class="tag" data-od-field="blocks.1">Color / 02</span></div>
+        <div class="blk b3" data-od-item><span class="tag" data-od-field="blocks.2">Type / 03</span></div>
+        <div class="blk b4" data-od-item><span class="tag" data-od-field="blocks.3">Grid / 04</span></div>
       </div>
     </div>
 
     <div class="slide-meta">
-      <div>RESCUE&nbsp;PRINCIPLES</div>
-      <div>04<span class="dot"></span>08</div>
+      <div data-od-field="meta">RESCUE&nbsp;PRINCIPLES</div>
+      <div data-od-field="page">04<span class="dot"></span>08</div>
     </div>
   </section>
 
   <!-- ============ 5: BAR CHART ============ -->
-  <section class="s5" data-screen-label="05 Chart">
+  <section class="s5" data-layout-id="chart" data-screen-label="05 Chart">
     <div class="topbar">
-      <div>PAGE&nbsp;SYSTEM</div>
-      <div class="pill">CHART&nbsp;/&nbsp;BARS</div>
+      <div data-od-field="kicker">PAGE&nbsp;SYSTEM</div>
+      <div class="pill" data-od-field="pill">CHART&nbsp;/&nbsp;BARS</div>
     </div>
 
-    <h1 class="h display">TEMPLATE COMPLIANCE, CHECKPOINT BY CHECKPOINT.</h1>
+    <h1 class="h display" data-od-field="headline">TEMPLATE COMPLIANCE, CHECKPOINT BY CHECKPOINT.</h1>
+
+    <div class="bstat display" data-od-field="stat">91%</div>
 
     <div class="legend2">
-      <div class="row"><span class="sw" style="background:var(--green)"></span> Home template</div>
-      <div class="row"><span class="sw" style="background:var(--pink)"></span> Product template</div>
-      <div class="row"><span class="sw" style="background:var(--orange)"></span> Journal template</div>
+      <div class="row" data-od-item><span class="sw" style="background:var(--green)"></span> <span data-od-field="legend.0">Home template</span></div>
+      <div class="row" data-od-item><span class="sw" style="background:var(--pink)"></span> <span data-od-field="legend.1">Product template</span></div>
+      <div class="row" data-od-item><span class="sw" style="background:var(--orange)"></span> <span data-od-field="legend.2">Journal template</span></div>
     </div>
 
     <div class="axis-y">
@@ -494,140 +518,173 @@ ONE MESSY BRAND.</h1>
     </div>
 
     <div class="chart">
-      <div class="bar" style="height:34%; background:var(--green);"><span class="v">34</span><span class="x">C1</span></div>
-      <div class="bar" style="height:48%; background:var(--pink);"><span class="v">48</span><span class="x">C2</span></div>
-      <div class="bar" style="height:61%; background:var(--orange);"><span class="v">61</span><span class="x">C3</span></div>
-      <div class="bar" style="height:55%; background:var(--green);"><span class="v">55</span><span class="x">C4</span></div>
-      <div class="bar" style="height:72%; background:var(--pink);"><span class="v">72</span><span class="x">C5</span></div>
-      <div class="bar" style="height:84%; background:var(--orange);"><span class="v">84</span><span class="x">C6</span></div>
-      <div class="bar" style="height:91%; background:var(--green);"><span class="v">91</span><span class="x">C7</span></div>
+      <div class="bar" style="height:34%; background:var(--green);" data-od-item><span class="v" data-od-field="bars.0.value">34</span><span class="x" data-od-field="bars.0.label">C1</span></div>
+      <div class="bar" style="height:48%; background:var(--pink);" data-od-item><span class="v" data-od-field="bars.1.value">48</span><span class="x" data-od-field="bars.1.label">C2</span></div>
+      <div class="bar" style="height:61%; background:var(--orange);" data-od-item><span class="v" data-od-field="bars.2.value">61</span><span class="x" data-od-field="bars.2.label">C3</span></div>
+      <div class="bar" style="height:55%; background:var(--green);" data-od-item><span class="v" data-od-field="bars.3.value">55</span><span class="x" data-od-field="bars.3.label">C4</span></div>
+      <div class="bar" style="height:72%; background:var(--pink);" data-od-item><span class="v" data-od-field="bars.4.value">72</span><span class="x" data-od-field="bars.4.label">C5</span></div>
+      <div class="bar" style="height:84%; background:var(--orange);" data-od-item><span class="v" data-od-field="bars.5.value">84</span><span class="x" data-od-field="bars.5.label">C6</span></div>
+      <div class="bar" style="height:91%; background:var(--green);" data-od-item><span class="v" data-od-field="bars.6.value">91</span><span class="x" data-od-field="bars.6.label">C7</span></div>
     </div>
 
-    <div class="note mono">FIG. 01 — SHARE OF EACH TEMPLATE PASSING BRAND QA AT SUCCESSIVE AUDIT CHECKPOINTS.</div>
+    <div class="note mono" data-od-field="note">FIG. 01 — SHARE OF EACH TEMPLATE PASSING BRAND QA AT SUCCESSIVE AUDIT CHECKPOINTS.</div>
 
     <div class="slide-meta">
-      <div>ROLLOUT</div>
-      <div>05<span class="dot"></span>08</div>
+      <div data-od-field="meta">ROLLOUT</div>
+      <div data-od-field="page">05<span class="dot"></span>08</div>
     </div>
   </section>
 
   <!-- ============ 6: PROCESS / FLOW ============ -->
-  <section class="s6" data-screen-label="06 Process">
+  <section class="s6" data-layout-id="process" data-screen-label="06 Process">
     <div class="topbar">
-      <div>PROOF&nbsp;OF&nbsp;REBUILD</div>
-      <div class="pill">FOUR&nbsp;TEMPLATES</div>
+      <div data-od-field="kicker">PROOF&nbsp;OF&nbsp;REBUILD</div>
+      <div class="pill" data-od-field="pill">FOUR&nbsp;TEMPLATES</div>
     </div>
 
-    <h1 class="h display">EVERY PAGE, REBUILT ON THE SYSTEM.</h1>
+    <h1 class="h display" data-od-field="headline">EVERY PAGE, REBUILT ON THE SYSTEM.</h1>
 
     <div class="header-line"></div>
 
     <div class="flow">
-      <div class="step s-1">
-        <div class="n">01</div>
-        <div class="t">Home</div>
-        <div class="d">Hero swapped to the single approved lockup and Trailhead Green; headline set in Archivo Black at the locked scale.</div>
+      <div class="step s-1" data-od-item>
+        <div class="n" data-od-field="steps.0.num">01</div>
+        <div class="t" data-od-field="steps.0.title">Home</div>
+        <div class="d" data-od-field="steps.0.desc">Hero swapped to the single approved lockup and Trailhead Green; headline set in Archivo Black at the locked scale.</div>
         <div class="arrow"></div>
       </div>
-      <div class="step s-2">
-        <div class="n">02</div>
-        <div class="t">Product</div>
-        <div class="d">Photography re-cropped to the 4:5 grid; price and CTA snapped to the 8px baseline used across all 42 pages.</div>
+      <div class="step s-2" data-od-item>
+        <div class="n" data-od-field="steps.1.num">02</div>
+        <div class="t" data-od-field="steps.1.title">Product</div>
+        <div class="d" data-od-field="steps.1.desc">Photography re-cropped to the 4:5 grid; price and CTA snapped to the 8px baseline used across all 42 pages.</div>
         <div class="arrow"></div>
       </div>
-      <div class="step s-3">
-        <div class="n">03</div>
-        <div class="t">Journal</div>
-        <div class="d">Long-form editorial rebuilt with the two-face type pairing — no more competing display fonts in one scroll.</div>
+      <div class="step s-3" data-od-item>
+        <div class="n" data-od-field="steps.2.num">03</div>
+        <div class="t" data-od-field="steps.2.title">Journal</div>
+        <div class="d" data-od-field="steps.2.desc">Long-form editorial rebuilt with the two-face type pairing — no more competing display fonts in one scroll.</div>
         <div class="arrow"></div>
       </div>
-      <div class="step s-4">
-        <div class="n">04</div>
-        <div class="t">Checkout</div>
-        <div class="d">Trust badges and hangtag color corrected to the single Blaze Orange hex; the last rogue shade retired.</div>
+      <div class="step s-4" data-od-item>
+        <div class="n" data-od-field="steps.3.num">04</div>
+        <div class="t" data-od-field="steps.3.title">Checkout</div>
+        <div class="d" data-od-field="steps.3.desc">Trust badges and hangtag color corrected to the single Blaze Orange hex; the last rogue shade retired.</div>
       </div>
     </div>
 
     <div class="slide-meta">
-      <div>TEMPLATE&nbsp;REBUILD</div>
-      <div>06<span class="dot"></span>08</div>
+      <div data-od-field="meta">TEMPLATE&nbsp;REBUILD</div>
+      <div data-od-field="page">06<span class="dot"></span>08</div>
     </div>
   </section>
 
   <!-- ============ 7: COMPARISON TABLE ============ -->
-  <section class="s7" data-screen-label="07 Compare">
+  <section class="s7" data-layout-id="compare" data-screen-label="07 Compare">
     <div class="topbar">
-      <div>EXPORT&nbsp;CHECKLIST</div>
-      <div class="pill">DELIVERABLES</div>
+      <div data-od-field="kicker">EXPORT&nbsp;CHECKLIST</div>
+      <div class="pill" data-od-field="pill">DELIVERABLES</div>
     </div>
 
-    <h1 class="h display">WHAT SHIPS WITH THE SYSTEM.</h1>
+    <h1 class="h display" data-od-field="headline">WHAT SHIPS WITH THE SYSTEM.</h1>
 
-    <div class="badge">SIGN-OFF&nbsp;READY</div>
+    <div class="badge" data-od-field="sticker">SIGN-OFF&nbsp;READY</div>
 
     <div class="table">
       <div class="row head">
-        <div>Kit</div>
-        <div>Contents</div>
-        <div>Format</div>
-        <div>Owner</div>
+        <div data-od-field="head.0">Kit</div>
+        <div data-od-field="head.1">Contents</div>
+        <div data-od-field="head.2">Format</div>
+        <div data-od-field="head.3">Owner</div>
       </div>
-      <div class="row">
-        <div class="label">Logo</div>
-        <div class="col-pink">1 lockup, 3 clear-space rules</div>
-        <div class="col-green">SVG + EPS</div>
-        <div class="col-orange">Brand team</div>
+      <div class="row" data-od-item>
+        <div class="label" data-od-field="rows.0.a">Logo</div>
+        <div class="col-pink" data-od-field="rows.0.b">1 lockup, 3 clear-space rules</div>
+        <div class="col-green" data-od-field="rows.0.c">SVG + EPS</div>
+        <div class="col-orange" data-od-field="rows.0.d">Brand team</div>
       </div>
-      <div class="row">
-        <div class="label">Color</div>
-        <div class="col-pink">3 core + 2 accent hex</div>
-        <div class="col-green">Figma tokens</div>
-        <div class="col-orange">Design</div>
+      <div class="row" data-od-item>
+        <div class="label" data-od-field="rows.1.a">Color</div>
+        <div class="col-pink" data-od-field="rows.1.b">3 core + 2 accent hex</div>
+        <div class="col-green" data-od-field="rows.1.c">Figma tokens</div>
+        <div class="col-orange" data-od-field="rows.1.d">Design</div>
       </div>
-      <div class="row">
-        <div class="label">Type</div>
-        <div class="col-pink">Archivo Black + Space Grotesk</div>
-        <div class="col-green">Web + print specs</div>
-        <div class="col-orange">Design</div>
+      <div class="row" data-od-item>
+        <div class="label" data-od-field="rows.2.a">Type</div>
+        <div class="col-pink" data-od-field="rows.2.b">Archivo Black + Space Grotesk</div>
+        <div class="col-green" data-od-field="rows.2.c">Web + print specs</div>
+        <div class="col-orange" data-od-field="rows.2.d">Design</div>
       </div>
-      <div class="row">
-        <div class="label">Grid</div>
-        <div class="col-pink">8px baseline, 4 templates</div>
-        <div class="col-green">Page starters</div>
-        <div class="col-orange">Engineering</div>
+      <div class="row" data-od-item>
+        <div class="label" data-od-field="rows.3.a">Grid</div>
+        <div class="col-pink" data-od-field="rows.3.b">8px baseline, 4 templates</div>
+        <div class="col-green" data-od-field="rows.3.c">Page starters</div>
+        <div class="col-orange" data-od-field="rows.3.d">Engineering</div>
       </div>
     </div>
 
     <div class="slide-meta">
-      <div>HANDOFF</div>
-      <div>07<span class="dot"></span>08</div>
+      <div data-od-field="meta">HANDOFF</div>
+      <div data-od-field="page">07<span class="dot"></span>08</div>
     </div>
   </section>
 
   <!-- ============ 8: CLOSING / BIG MARK ============ -->
-  <section class="s8" data-screen-label="08 Closing">
+  <section class="s8" data-layout-id="closing" data-screen-label="08 Closing">
     <div class="topbar">
-      <div>END&nbsp;OF&nbsp;DECK</div>
-      <div class="pill">SIGNED&nbsp;OFF</div>
+      <div data-od-field="kicker">END&nbsp;OF&nbsp;DECK</div>
+      <div class="pill" data-od-field="pill">SIGNED&nbsp;OFF</div>
     </div>
 
-    <h1 class="h display">STAY<br/>ON BRAND.</h1>
+    <h1 class="h display" data-od-field="headline">STAY<br/>ON BRAND.</h1>
 
-    <p class="strap body">
+    <p class="strap body" data-od-field="body">
       One lockup. Three colors. Two typefaces. An 8px grid. Forty-two pages, zero exceptions — the Cairn Supply Co. identity system ships to brand and engineering today.
     </p>
 
     <div class="stamp" aria-hidden="true">
       <div class="inner">
-        <div class="num">100%</div>
-        <div class="lbl">On-Brand Pages</div>
+        <div class="num" data-od-field="sticker_stat">100%</div>
+        <div class="lbl" data-od-field="sticker_label">On-Brand Pages</div>
       </div>
     </div>
 
     <div class="slide-meta">
-      <div>CLOSING&nbsp;CARD</div>
-      <div>08<span class="dot"></span>08</div>
+      <div data-od-field="meta">CLOSING&nbsp;CARD</div>
+      <div data-od-field="page">08<span class="dot"></span>08</div>
     </div>
+  </section>
+
+
+  <!-- ============ 9: CARDS3 (owner slide 9 restyle) ============ -->
+  <section class="s9" data-layout-id="cards3" data-screen-label="09 Cards">
+    <div class="topbar">
+      <div data-od-field="kicker">RUNS&nbsp;ON&nbsp;YOUR&nbsp;PC</div>
+      <div class="pill" data-od-field="pill">CHAPTER&nbsp;01</div>
+    </div>
+    <h1 class="h display" data-od-field="headline">WHAT IF BOOKS READ TO YOU?</h1>
+    <div class="cards">
+      <div class="kcard k1" data-od-item><div class="n" data-od-field="cards.0.num">01</div><div class="t" data-od-field="cards.0.title">Real people voices</div><div class="d" data-od-field="cards.0.desc"></div></div>
+      <div class="kcard k2" data-od-item><div class="n" data-od-field="cards.1.num">02</div><div class="t" data-od-field="cards.1.title">Runs on your PC</div><div class="d" data-od-field="cards.1.desc"></div></div>
+      <div class="kcard k3" data-od-item><div class="n" data-od-field="cards.2.num">03</div><div class="t" data-od-field="cards.2.title">No cloud</div><div class="d" data-od-field="cards.2.desc"></div></div>
+    </div>
+    <div class="slide-meta"><div data-od-field="meta">GAIJIN&nbsp;WORLD</div><div data-od-field="page">09<span class="dot"></span>10</div></div>
+  </section>
+
+  <!-- ============ 10: COLOPHON (owner slide 10 restyle) ============ -->
+  <section class="s10" data-layout-id="colophon" data-screen-label="10 Colophon">
+    <div class="topbar">
+      <div class="tb-pink" data-od-field="kicker">DISCLOSURE&nbsp;/&nbsp;REAL&nbsp;FOOTAGE</div>
+      <div class="pill" data-od-field="pill">COLOPHON</div>
+    </div>
+    <h1 class="h display" data-od-field="headline">REAL FOOTAGE ONLY.</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <div class="sub body" data-od-field="sub">No reenactment &mdash; no stock &mdash; no renders.</div>
+    <div class="chips">
+      <span class="chip" data-od-item><span data-od-field="chips.0">REAL APP</span></span>
+      <span class="chip" data-od-item><span data-od-field="chips.1">RECORDED ON MY PC</span></span>
+      <span class="chip" data-od-item><span data-od-field="chips.2">NO RENDERS</span></span>
+    </div>
+    <div class="slide-meta"><div data-od-field="meta">COLOPHON</div><div data-od-field="page">10<span class="dot"></span>10</div></div>
   </section>
 
 </deck-stage>

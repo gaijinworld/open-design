@@ -90,15 +90,38 @@ window.__timelines.push(tl);
 
 ## 5. Per-Slide Layout Choreography (`01 .. 10`)
 
+Native section ids below are authoritative — they match `example.html`'s
+`data-layout-id` attributes and `motion-blueprint.json`. Each section is a
+direct `<deck-stage>` child authored at 1920×1080.
+
 | # | Layout ID | Name | Archetype | Remotion Composition | Camera & Element Motion |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 01 | `hero` | 01 · Ultra-Bold Hero | `cover` | `PptxParallaxIntro` | 1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5) |
-| 02 | `statement` | 02 · Core Manifesto | `quote` | `ParallaxDepthSandwich` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px) |
-| 03 | `exec-summary` | 03 · Executive Summary | `two-column` | `ParallaxDepthSandwich` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px) |
-| 04 | `financial-grid` | 04 · Growth Metrics Grid | `stats` | `EysiInspiredSequence` | Sub-pixel bezier drift (+42px horizontal) followed by 1.08x focal push-in onto primary metric/chart ROI at narration peak |
-| 05 | `big-stat` | 05 · Mega Stat Callout | `stats` | `EysiInspiredSequence` | Sub-pixel bezier drift (+42px horizontal) followed by 1.08x focal push-in onto primary metric/chart ROI at narration peak |
-| 06 | `services` | 06 · Service Capabilities | `three-column` | `ParallaxDepthSandwich` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px) |
-| 07 | `roadmap` | 07 · Phase Roadmap | `process` | `ParallaxDepthSandwich` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px) |
-| 08 | `pillars` | 08 · Strategic Pillars | `three-column` | `ParallaxDepthSandwich` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px) |
-| 09 | `global` | 09 · Global Footprint | `image-text` | `ParallaxDepthSandwich` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px) |
-| 10 | `closing` | 10 · Colophon & Closing | `closing` | `ParallaxDepthSandwich` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px) |
+| 01 | `title` | 01 · Title / Poster | `cover` | `PptxParallaxIntro` | 1.35x decoupled background plate + 6% slow Z-axis push-in over slide duration; fixed root vignette (zIndex: 5) |
+| 02 | `intro` | 02 · Intro / Two Col | `section-intro` | `PptxParallaxIntro` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card ROI focus, momentum exit (+380px) |
+| 03 | `stats` | 03 · Stat Grid 2x2 | `stat-grid` | `PptxParallaxIntro` | Sub-pixel bezier drift (+42px horizontal) followed by 1.08x focal push-in onto primary metric card ROI at narration peak |
+| 04 | `diagram` | 04 · Isometric Diagram | `diagram` | `PptxParallaxIntro` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x isometric stack ROI focus, momentum exit (+380px) |
+| 05 | `chart` | 05 · Bar Chart | `chart` | `PptxParallaxIntro` | Sub-pixel bezier drift (+42px horizontal) followed by 1.08x focal push-in onto chart bars / big-stat badge ROI at narration peak |
+| 06 | `process` | 06 · Process / Flow | `process` | `PptxParallaxIntro` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x step-card ROI focus, momentum exit (+380px) |
+| 07 | `compare` | 07 · Comparison Table | `compare` | `PptxParallaxIntro` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x table ROI focus, momentum exit (+380px) |
+| 08 | `closing` | 08 · Closing / Big Mark | `closing` | `PptxParallaxIntro` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x stamp badge ROI focus, momentum exit (+380px) |
+| 09 | `cards3` | 09 · Cards x3 | `stat-grid` | `PptxParallaxIntro` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x card row ROI focus, momentum exit (+380px) |
+| 10 | `colophon` | 10 · Colophon | `closing` | `PptxParallaxIntro` | 4-phase kinematic lifecycle: spring entrance (-280px -> 0), bezier drift (+42px), 1.06x chip row ROI focus, momentum exit (+380px) |
+
+### Native field bindings (`data-od-field`)
+
+Each layout's `overlayMap` instance binds flattened content keys onto these
+declared fields; declared-but-unbound fields are cleared (and `data-od-item`
+containers removed) so baked template text never leaks into exports.
+
+| Layout ID | Bound fields |
+| :--- | :--- |
+| `title` | `kicker`, `h1a`, `h1b`, `body` |
+| `intro` | `section`, `pill`, `label`, `headline`, `body` |
+| `stats` | `kicker`, `pill`, `headline`, `cards.0..3.{num,label,desc}` |
+| `diagram` | `kicker`, `pill`, `headline`, `body`, `blocks.0..3` |
+| `chart` | `kicker`, `pill`, `headline`, `stat`, `legend.0..2`, `bars.0..6.{value,label}`, `note` |
+| `process` | `kicker`, `pill`, `headline`, `steps.0..3.{num,title,desc}` |
+| `compare` | `kicker`, `pill`, `headline`, `sticker`, `head.0..3`, `rows.0..3.{a,b,c,d}` |
+| `closing` | `kicker`, `pill`, `headline`, `body`, `sticker_stat`, `sticker_label` |
+| `cards3` | `kicker`, `pill`, `headline`, `cards.0..2.{num,title,desc}` |
+| `colophon` | `kicker`, `pill`, `headline`, `sub`, `chips.0..2` |
